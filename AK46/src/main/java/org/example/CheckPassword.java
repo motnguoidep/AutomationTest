@@ -28,5 +28,6 @@ public class CheckPassword {
         boolean isValid = isPassword(testPassword);
         System.out.println("Is the password valid? " + isValid);
     }
+
 }
 
