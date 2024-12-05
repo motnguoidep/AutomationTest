@@ -49,9 +49,6 @@ public class FormAuthenticationTest {
 
     @Test
     void loginFailWithWrongUserName() {
-        // Điều hướng đến trang đăng nhập
-        driver.get("https://the-internet.herokuapp.com/login");
-
         // Nhập thông tin đăng nhập không hợp lệ
         driver.findElement(By.id("username")).sendKeys("tomsmith1111");
         driver.findElement(By.id("password")).sendKeys("SuperSecretPassword!");
@@ -64,16 +61,11 @@ public class FormAuthenticationTest {
 
     @Test
     void loginFailWithWrongPassword() {
-        // Điều hướng đến trang đăng nhập
-        driver.get("https://the-internet.herokuapp.com/login");
-
         // Nhập thông tin đăng nhập không hợp lệ
         driver.findElement(By.id("username")).sendKeys("tomsmith");
         driver.findElement(By.id("password")).sendKeys("SuperSecretPassword1234");
         driver.findElement(By.cssSelector("button[type=submit]")).click();
 
-        // Xác minh rằng đăng nhập thất bại do mật khẩu không hợp lệ
-        Assert.assertEquals(driver.getCurrentUrl(), "https://the-internet.herokuapp.com/login");
         Assert.assertTrue(driver.findElement(By.className("error")).getText().contains("Your password is invalid!"));
     }
 

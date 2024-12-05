@@ -16,9 +16,9 @@ public class LoginFb {
         Assert.assertEquals(driver.getTitle(), "Facebook – log in or sign up");
 
         // Nhập tên người dùng
-        driver.findElement(By.name("email")).sendKeys("0398321759");
+        driver.findElement(By.name("email")).sendKeys("");
         // Nhập mật khẩu
-        driver.findElement(By.name("pass")).sendKeys("Thuong190723."); // Thay thế bằng mật khẩu của bạn
+        driver.findElement(By.name("pass")).sendKeys(""); // Thay thế bằng mật khẩu của bạn
 
         // Nhấn nút Login
         driver.findElement(By.name("login")).click(); // Sử dụng name="login" để tìm nút đăng nhập

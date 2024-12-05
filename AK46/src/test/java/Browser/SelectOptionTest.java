@@ -46,8 +46,5 @@ public class SelectOptionTest {
         Thread.sleep(3000); // Chậm 3 giây
     }
 
-//    @AfterClass
-//    public void tearDown() {
-//        driver.quit(); // Đóng trình duyệt sau khi các bài kiểm tra hoàn tất
-//    }
+
 }

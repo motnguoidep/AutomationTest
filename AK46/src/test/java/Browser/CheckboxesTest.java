@@ -8,33 +8,38 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class CheckboxesTest {
-    private WebDriver driver = new ChromeDriver();
-
+/*
+* TC02: Checkboxes : Check to a box
+* Open Browser
+* Navigate to https://the-internet.herokuapp.com/checkboxes
+* Check on checkbox 1
+* Verify  that checkbox1 is checked
+* Check on checkbox 2
+* Verify that checkbox 2 is checked*/
+//cach 1: //*[@checked]
+//cach 2:    #checkboxes input:nth-child(3)
+//cach 3: //input[1]/../input[2]
 
     @Test
-    void openBrowserWithDefaultMode() {
+    void ableSelectChecbox(){
+        WebDriver driver = new ChromeDriver();
         driver.get("https://the-internet.herokuapp.com/checkboxes");
-        Assert.assertEquals(driver.getTitle(), "The Internet");
+        WebElement checkbox = driver.findElement(By.cssSelector("#checkboxes input:nth-child(1)"));
+        if(!checkbox.isSelected()){
+            checkbox.click();
+        }
+        Assert.assertTrue(checkbox.isSelected());
     }
 
-
-    @Test(dependsOnMethods = "openBrowserWithDefaultMode")
-    void checkbox1() {
-        // Lấy checkbox 1 (checkbox đầu tiên)
-        WebElement checkbox1 = driver.findElement(By.xpath("//input[@type='checkbox'][1]"));
-        Assert.assertTrue(checkbox1.isSelected(), "Verify checkbox1 is checked initially");
-
-        // Đánh dấu checkbox 1
-//        checkbox1.click();
-//        Assert.assertTrue(checkbox1.isSelected(), "Verify checkbox1 is checked after clicking");
-    }
-
-    @Test(dependsOnMethods = "openBrowserWithDefaultMode")
-    void checkbox2() {
-        // Lấy checkbox 2 (checkbox thứ hai)
-        WebElement checkbox2 = driver.findElement(By.xpath("//input[@type='checkbox'][2]"));
-        Assert.assertTrue(checkbox2.isSelected(), "Verify checkbox2 is checked initially");
-
+    @Test
+    void ableToSelectAChecbox(){
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://the-internet.herokuapp.com/checkboxes");
+        WebElement checkbox = driver.findElement(By.cssSelector("#checkboxes input:nth-child(3)"));
+        if(!checkbox.isSelected()){
+            checkbox.click();
+        }
+        Assert.assertTrue(checkbox.isSelected());
 
     }
 
