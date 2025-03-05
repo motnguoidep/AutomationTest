@@ -1,0 +1,8 @@
+<suite name="WebTable">
+    <test name="Chrome Browser">
+        <classes>
+            <class name="theInternet.FormAuthenticationTest"/>
+            <class name="theInternet.CheckboxesTest"/>
+        </classes>
+    </test>
+</suite>
