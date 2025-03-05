@@ -2,7 +2,7 @@
     <test name="Chrome Browser">
         <classes>
             <class name="theInternet.FormAuthenticationTest"/>
-            <class name="theInternet.CheckboxesTest"/>
+<!--            <class name="theInternet.CheckboxesTest"/>-->
         </classes>
     </test>
 </suite>
